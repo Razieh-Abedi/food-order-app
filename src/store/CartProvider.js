@@ -1,6 +1,9 @@
 import CartContext from "./cart-context";
+import React, { useState } from "react";
 
 const CartProvider = (props) => {
+  //const [totalAmountState, setTotalAmountState] = useState(0)
+
   const addItemToCartHandler = (item) => {};
 
   const removeItemFromCartHandler = (id) => {};
