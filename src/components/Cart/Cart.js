@@ -5,10 +5,14 @@ import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  const { items, totalAmount } = useContext(CartContext);
+  const { items, totalAmount, addItem, removeItem } = useContext(CartContext);
 
-  const cartItemRemoveHandler = (id) => {};
-  const cartItemAddHandler = (item) => {};
+  const cartItemRemoveHandler = (id) => {
+    removeItem(id);
+  };
+  const cartItemAddHandler = (item) => {
+    addItem({ ...item, amount: 1 });
+  };
 
   const cartTotalAmount = `$${totalAmount.toFixed(2)}`;
   const hasItems = items.length > 0;
